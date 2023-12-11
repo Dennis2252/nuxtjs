@@ -13,4 +13,4 @@ RUN npm up nuxt
 EXPOSE 3000
 
 RUN nuxt build
-CMD [ "npm", "run", "generate" ]
+CMD [ "npm", "run", "build" ]
