@@ -1,7 +1,3 @@
-FROM node:18.14.2
-
-WORKDIR /app
-
 # Install the application dependencies in a full UBI Node docker image
 FROM registry.access.redhat.com/ubi8/nodejs-18:latest AS base
 
@@ -11,6 +7,7 @@ USER root
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
+# Install app dependencies
 RUN npm install
 
 # Copy the dependencies into a minimal Node.js image
@@ -36,5 +33,7 @@ ENV PORT 3000
 # Container exposes port 8080
 EXPOSE 3000
 
+RUN npx nuxi generate
+
 # Start node process
-CMD ["npx", "nuxi", "generate"]
+CMD ["npm", "start"]

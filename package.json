@@ -6,7 +6,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
     "@kalimahapps/eslint-plugin-tailwind": "^1.0.10",
@@ -23,6 +24,7 @@
     "@heroicons/vue": "^2.0.18",
     "axios": "^1.4.0",
     "jquery": "^3.7.0",
+    "serve": "^14.2.1",
     "vue3-star-ratings": "^3.0.3"
   }
 }
